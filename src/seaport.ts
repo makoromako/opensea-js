@@ -2338,7 +2338,7 @@ export class OpenSeaPort {
             metadata,
           ]
         )
-        .estimateGasAsync({ from: accountAddress, null });
+        .estimateGasAsync({ from: accountAddress, value: null });
     } catch (error) {
       if (retries <= 0) {
         console.error(error);
