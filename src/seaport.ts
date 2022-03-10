@@ -521,7 +521,7 @@ export class OpenSeaPort {
       {
         from: accountAddress,
         to: this._wrappedNFTLiquidationProxyAddress,
-        value: null,
+        value: 0,
         data: encodeCall(
           getMethod(WrappedNFTLiquidationProxy, "purchaseNFTs"),
           [numTokensToBuy, contractAddress]
@@ -631,7 +631,7 @@ export class OpenSeaPort {
       {
         from: accountAddress,
         to: token.address,
-        value: null,
+        value: 0,
         data: encodeCall(getMethod(CanonicalWETH, "deposit"), []),
       },
       (error) => {
@@ -2338,7 +2338,7 @@ export class OpenSeaPort {
             metadata,
           ]
         )
-        .estimateGasAsync({ from: accountAddress, value: null });
+        .estimateGasAsync({ from: accountAddress, value: 0 });
     } catch (error) {
       if (retries <= 0) {
         console.error(error);
